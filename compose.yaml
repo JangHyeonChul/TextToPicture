@@ -1,1 +1,18 @@
+version: '1'
+
+#WebServer
 services:
+  ttwebserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE_PATH: ./build/libs/*.jar
+    ports:
+      - "8080:8080"
+
+
+# ClinetServer
+
+
+
