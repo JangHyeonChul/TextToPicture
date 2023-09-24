@@ -6,15 +6,18 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class text {
 
+    // http://localhost:8080/test
     @CrossOrigin
     @GetMapping("/test")
-    public String test(@RequestParam("text") String text) {
+    public String test(@RequestParam("text") String text ) {
         System.out.println("text = " + text);
 
         return text;
     }
 
-    @GetMapping("/text2")
+    @CrossOrigin
+    // http://localhost:8080/test2
+    @GetMapping("/test2")
     public String test2() {
 
 

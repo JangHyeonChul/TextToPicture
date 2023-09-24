@@ -1,11 +1,13 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
   <button type="button" @click="testMethod()"> asdfasdf</button>
+  <h1>안녕하세요test</h1>
+  <h2>서승호입니다</h2>
+  <input type="text" />
+  <button type="button">제출버튼 </button>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 import axios from "axios"
 
@@ -13,9 +15,8 @@ export default {
   name: 'App',
 
  methods: {
-        testMethod() {
-            axios
-            .get('http://localhost:8080/')
+   testMethod() {
+            axios.get('http://localhost:8080/test')
             .then( (response) => {
                 console.log(response)
             })
@@ -26,7 +27,7 @@ export default {
     },
 
   components: {
-    HelloWorld
+
   }
 }
 </script>
