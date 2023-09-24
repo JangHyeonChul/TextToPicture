@@ -20,7 +20,6 @@ public class text {
     @GetMapping("/test2")
     public String test2() {
 
-
         return "안녕하세요";
     }
 }
