@@ -13,4 +13,11 @@ public class text {
 
         return text;
     }
+
+    @GetMapping("/text2")
+    public String test2() {
+
+
+        return "안녕하세요";
+    }
 }
