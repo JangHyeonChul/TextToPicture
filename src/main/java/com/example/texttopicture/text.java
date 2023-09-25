@@ -15,11 +15,13 @@ public class text {
         return text;
     }
 
-    @CrossOrigin
     // http://localhost:8080/test2
+    @CrossOrigin
     @GetMapping("/test2")
     public String test2() {
 
         return "안녕하세요";
     }
+
+    // 기능1
 }
