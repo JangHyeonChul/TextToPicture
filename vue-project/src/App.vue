@@ -4,6 +4,7 @@
   <h2>서승호입니다</h2>
   <input type="text" />
   <button type="button">제출버튼 </button>
+  <h1>기능1완성</h1>
 
 </template>
 
