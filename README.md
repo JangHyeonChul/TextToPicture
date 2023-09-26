@@ -15,3 +15,5 @@ flask python
 1단계 - 폴더 flask-server 안에 flask 다운받고 웹페이지 구동
 
 2단계 - flask에서 chat gpt dall e api 불러오기 (Chat gpt 물어보면)
+
+Swagger 페이지 : http://localhost:8080/swagger-ui/index.html#/
