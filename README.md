@@ -16,4 +16,4 @@ flask python
 
 2단계 - flask에서 chat gpt dall e api 불러오기 (Chat gpt 물어보면)
 
-Swagger 페이지 : http://localhost:8080/swagger-ui/index.html#/
+Spring Rest Docs 페이지 : http://localhost:8080/docs/api-doc.html
