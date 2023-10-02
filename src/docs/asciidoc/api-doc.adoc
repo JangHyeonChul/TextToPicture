@@ -1,0 +1,1 @@
+include::{snippets}/test/request-body.adoc[]
