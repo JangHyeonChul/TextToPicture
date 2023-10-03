@@ -1,20 +1,23 @@
 package com.example.texttopicture.Api.DallChat;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-
+@RequiredArgsConstructor
 @RestController
+@RequestMapping("/image")
 public class DallChatAPI {
 
-    @Autowired
-    private DallChatService dallChatService;
+    private final DallChatService chatService;
 
+    /*
+    이미지 생성 API
+    */
+    @GetMapping("/generate")
+    @CrossOrigin
+    public String DallImageGenerate(String prompt) {
 
-    @GetMapping("/image")
-    public String asdf() {
-
-        return dallChatService.ImageGenerate("안녕");
+        return chatService.ImageGenerate(prompt);
     }
 }
