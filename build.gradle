@@ -2,29 +2,10 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '2.7.15'
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
-    id 'org.asciidoctor.jvm.convert' version '3.3.2'
 }
-
-configurations {
-    asciidoctorExtensions
-}
-
-asciidoctor {
-    dependsOn test    // gradle build 시 test -> asciidoctor 순으로 수행
-}
-
-bootJar {
-    dependsOn asciidoctor    // gradle build 시 asciidoctor 순으로 수행
-    from("${asciidoctor.outputDir}/html5") {    // gradle build 시 ./build/asciidoc/html5/ 에 html 파일생성
-        into 'static/docs'                        // html 파일이 jar 안의 /static/docs/ 폴더로 복사됨
-    }
-}
-
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-
-
 
 java {
     sourceCompatibility = '11'
@@ -34,42 +15,13 @@ repositories {
     mavenCentral()
 }
 
-ext {
-    snippetsDir = file('./build/generated-snippets')
-}
-
-
-tasks.named('test') {
-    useJUnitPlatform()
-    outputs.dir snippetsDir // (6)
-}
-
-asciidoctor.doFirst {
-    delete file('src/main/resources/static/docs')
-}
-
-task copyDocument(type: Copy) {
-    dependsOn asciidoctor
-    from file("build/docs/asciidoc")
-    into file("src/main/resources/static/docs")
-}
-
-build {
-    dependsOn copyDocument
-}
-
-
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.projectlombok:lombok'
-    // https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
-    implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
-    // open API
-    implementation 'io.github.flashvayne:chatgpt-spring-boot-starter:1.0.4'
 
-
+    implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+    implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
 }
 
 tasks.named('test') {
