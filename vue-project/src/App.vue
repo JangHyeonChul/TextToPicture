@@ -1,32 +1,27 @@
 <template>
 
+
   <HeaderNav></HeaderNav>
 
   <div class="container">
 
-    <HeaderSubItem></HeaderSubItem>
-    <ImageSection></ImageSection>
-    <ImageExampleSection></ImageExampleSection>
+    <router-view></router-view>
 
   </div>
+
+
+
 
 </template>
 
 <script>
 import HeaderNav from './components/HeaderNav.vue'
-import HeaderSubItem from './components/HeaderSubItem.vue'
-import ImageSection from "@/components/ImageSection.vue";
-import ImageExampleSection from "@/components/ImageExampleSection.vue";
 
 
 export default {
   name: 'App',
 
-
   components: {
-    HeaderSubItem,
-    ImageExampleSection,
-    ImageSection,
     HeaderNav
 
   }
@@ -57,6 +52,7 @@ body, html , h1 {
   width: 1380px;
   margin-left: auto;
   margin-right: auto;
+  padding: 1rem 0;
 }
 
 ul li {
@@ -76,6 +72,12 @@ h1 {
   font-size: 0.8rem;
 
 }
+
+a {
+  text-decoration: none;
+}
+
+
 
 
 

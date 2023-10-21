@@ -140,7 +140,6 @@ export default {
 <style scoped>
 .main {
   width: 100%;
-  margin: 2rem 0;
   border-bottom: solid 2px #eeeeee;
 }
 
